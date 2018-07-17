@@ -30,7 +30,6 @@ export default function initMap(ymaps, containerId) {
   objectManager.objects.events.add('click',(event)=>{
     const objectId = event.get('objectId');
     const obj = objectManager.objects.getById(objectId);
-    const objData = objectManager.objects.getById(objectId).properties.details;
     objectManager.objects.balloon.open(objectId);     
     if (!obj.properties.details) {
       loadDetails(objectId).then(data => {
